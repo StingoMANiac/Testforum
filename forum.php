@@ -10,6 +10,7 @@
 
     $post_query ="INSERT INTO testforum (poster, title, text) VALUES ('$user_name', '$title', '$text')";
     $result = mysqli_query($link, $post_query) or die("Ошибка " . mysqli_error($link)); 
+    header("Location: " . $_SERVER['REQUEST_URI']);
   }
   mysqli_close($link);
 
@@ -21,7 +22,7 @@
 <head>
   <meta charset="utf-8">
   <title>Forum Page</title>
-  <link rel="stylesheet" type="text/css" href="Style/style.css">
+  <link rel="stylesheet" type="text/css" href="Style/forum-style.css">
 </head>
 
 <?php
